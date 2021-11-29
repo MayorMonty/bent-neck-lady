@@ -19,9 +19,15 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header
-        className="bg-hero-pattern bg-cover bg-center flex items-end justify-center"
+        className="bg-hero-pattern bg-cover bg-center flex flex-col items-center justify-end"
         style={{ height: Math.min(height - offset, 1.75 * height) }}
       >
+        <h1
+          className="text-white text-center text-4xl mb-24"
+          style={{ opacity: Math.max(1 + offset / height, 0) }}
+        >
+          Who Is The Bent Neck Lady?
+        </h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-6 w-6"
@@ -29,7 +35,7 @@ export default function Home() {
           viewBox="0 0 24 24"
           stroke="currentColor"
           className="text-white w-8 h-8 mb-24 animate-bounce"
-          style={{ opacity: Math.max(1 + (offset / height), 0) }}
+          style={{ opacity: Math.max(1 + offset / height, 0) }}
         >
           <path
             strokeLinecap="round"
