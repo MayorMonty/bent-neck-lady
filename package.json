@@ -4,12 +4,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "export": "next export"
+    "deploy": "next deploy"
   },
   "dependencies": {
     "@heroicons/react": "^1.0.5",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "next": "latest",
+    "pointer-tracker": "^2.5.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },

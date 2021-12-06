@@ -45,7 +45,11 @@ export default function Home() {
           />
         </svg>
       </header>
-      <main className="min-h-screen bg-black"></main>
+      <main className="min-h-screen bg-black p-6 md:w-2/3 sm:w-full m-auto mt-12">
+        <p class="text-white text-opacity-90">
+          In Mike Flanagan's Netflix series, <em>The Haunting of Hill House</em>, 
+        </p>
+      </main>
     </div>
   );
 }
