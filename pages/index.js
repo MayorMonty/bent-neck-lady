@@ -5,6 +5,8 @@ import { useEffect, useRef, useState } from "react";
 const images = {
   "Adult Nellie": "/compare/AdultNellie.jpg",
   Luke: "/compare/Luke.jpg",
+  "Young Nellie": "/compare/YoungNellie.webp",
+  "Steve": "/compare/Steve.jpg",
 };
 
 export default function Compare() {
@@ -57,9 +59,9 @@ export default function Compare() {
           onMouseUp={() => setMoving(false)}
         ></div>
         <section className="flex h-screen">
-          <div className="left bg-green-500 h-screen" style={style.left}></div>
+          <div className="left bg-black h-screen" style={style.left}></div>
           <div
-            className="right bg-red-500 h-screen flex-1"
+            className="right bg-black h-screen flex-1"
             style={style.right}
           ></div>
         </section>
