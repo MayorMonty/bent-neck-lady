@@ -12,8 +12,8 @@ export default function Compare() {
   const { width } = useWindowSize();
   const [moving, setMoving] = useState(false);
   const [left, setLeft] = useState(width / 2);
-  const [leftImage, setLeftImage] = useState("/compare/AdultNellie.jpg");
-  const [rightImage, setRightImage] = useState("/compare/Luke.jpg");
+  const [leftImage, setLeftImage] = useState("Adult Nellie");
+  const [rightImage, setRightImage] = useState("Luke");
 
   const style = {
     bar: {
@@ -21,11 +21,11 @@ export default function Compare() {
     },
     left: {
       width: left,
-      backgroundImage: `url(${leftImage})`,
+      backgroundImage: `url(${images[leftImage]})`,
       backgroundSize: "100vw 100vh",
     },
     right: {
-      backgroundImage: `url(${rightImage})`,
+      backgroundImage: `url(${images[rightImage]})`,
       backgroundSize: "100vw 100vh",
       backgroundPositionX: `${width - left}px`,
     },
@@ -65,16 +65,16 @@ export default function Compare() {
         </section>
         <nav className="absolute left-0 w-screen bottom-0 h-24 bg-black flex items-center justify-between px-12">
           <label className="text-3xl block text-left text-white bg-black cursor-pointer" htmlFor="left">
-            <select class="form-select block w-full mt-1 bg-black bg-opacity-60" id="left" onChange={value => setLeftImage(value)}>
+            <select class="form-select block w-full mt-1 bg-black bg-opacity-60" id="left" value={leftImage} onChange={event => setLeftImage(event.target.value)}>
               {Object.entries(images).map(([name, src]) => (
-                <option key={name} value={src}>{name}</option> 
+                <option key={name} value={name}>{name}</option> 
               ))}
             </select>
           </label>
           <label className="text-3xl block text-left text-white bg-black cursor-pointer" htmlFor="right">
-            <select class="form-select block w-full mt-1 bg-black bg-opacity-60" id="right" onChange={value => setRightImage(value)}>
+            <select class="form-select block w-full mt-1 bg-black bg-opacity-60" id="right" value={rightImage} onChange={event => setRightImage(event.target.value)}>
             {Object.entries(images).map(([name, src]) => (
-                <option key={name} value={src}>{name}</option> 
+                <option key={name} value={name}>{name}</option> 
               ))}
             </select>
           </label>
