@@ -7,6 +7,8 @@ const images = {
   Luke: "/compare/Luke.jpg",
   "Young Nellie": "/compare/YoungNellie.webp",
   "Steve": "/compare/Steve.jpg",
+  "Olivia": "/compare/Olivia.png",
+  "Shirley": "/compare/Shirley.jpg"
 };
 
 export default function Compare() {
@@ -44,6 +46,10 @@ export default function Compare() {
     );
   }
 
+  useEffect(() => {
+    setLeft(width / 2);
+  }, [width]);
+
   return (
     <div className="min-h-screen bg-black">
       <Head>
@@ -52,12 +58,14 @@ export default function Compare() {
       </Head>
       <main className="relative max-h-screen" onMouseMove={onMouseMove}>
         <div
-          className="absolute w-2 h-full bg-black bg-opacity-75 cursor-move"
+          className="absolute w-2 h-full bg-black bg-opacity-75 cursor-move flex items-center justify-center"
           style={style.bar}
           ref={bar}
           onMouseDown={() => setMoving(true)}
           onMouseUp={() => setMoving(false)}
-        ></div>
+        >
+          <div className="h-12 w-12 rounded-full bg-white bg-opacity-50 rotate-90" />
+        </div>
         <section className="flex h-screen">
           <div className="left bg-black h-screen" style={style.left}></div>
           <div
