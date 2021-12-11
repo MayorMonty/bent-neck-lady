@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 const images = {
   "Adult Nellie": "/compare/AdultNellie.jpg",
-  "Luke": "/compare/Luke.jpg",
+  Luke: "/compare/Luke.jpg",
   "Young Nellie": "/compare/YoungNellie.webp",
-  "Steve": "/compare/Steve.jpg",
-  "Olivia": "/compare/Olivia.png",
-  "Shirley": "/compare/Shirley.jpg",
-  "Theo": "/compare/Theo.png",
+  Steve: "/compare/Steve.jpg",
+  Olivia: "/compare/Olivia.png",
+  Shirley: "/compare/Shirley.jpg",
+  Theo: "/compare/Theo.png",
 };
 
 export default function Compare() {
@@ -59,13 +59,44 @@ export default function Compare() {
       </Head>
       <main className="relative max-h-screen" onMouseMove={onMouseMove}>
         <div
-          className="absolute w-2 h-full bg-black bg-opacity-75 cursor-move flex items-center justify-center"
+          className="absolute w-2 h-full bg-black bg-opacity-75 cursor-move flex items-center justify-center group"
           style={style.bar}
           ref={bar}
           onMouseDown={() => setMoving(true)}
           onMouseUp={() => setMoving(false)}
         >
-          <div className="h-12 w-12 rounded-full bg-white bg-opacity-50 rotate-90" />
+          <div className="group-hover:animate-pulse relative">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-12 w-12 absolute right-full mr-12 text-white text-opacity-50 invisible group-hover:visible"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11 19l-7-7 7-7m8 14l-7-7 7-7"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-12 w-12 absolute left-full ml-12 text-white text-opacity-50 invisible group-hover:visible"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 5l7 7-7 7M5 5l7 7-7 7"
+              />
+            </svg>
+          </div>
         </div>
         <section className="flex h-screen">
           <div className="left bg-black h-screen" style={style.left}></div>
@@ -75,17 +106,37 @@ export default function Compare() {
           ></div>
         </section>
         <nav className="absolute left-0 w-screen bottom-0 h-24 bg-black flex items-center justify-between px-12">
-          <label className="text-3xl block text-left text-white bg-black cursor-pointer" htmlFor="left">
-            <select class="form-select block w-full mt-1 bg-black bg-opacity-60" id="left" value={leftImage} onChange={event => setLeftImage(event.target.value)}>
+          <label
+            className="text-3xl block text-left text-white bg-black cursor-pointer"
+            htmlFor="left"
+          >
+            <select
+              class="form-select block w-full mt-1 bg-black bg-opacity-60"
+              id="left"
+              value={leftImage}
+              onChange={(event) => setLeftImage(event.target.value)}
+            >
               {Object.entries(images).map(([name, src]) => (
-                <option key={name} value={name}>{name}</option> 
+                <option key={name} value={name}>
+                  {name}
+                </option>
               ))}
             </select>
           </label>
-          <label className="text-3xl block text-left text-white bg-black cursor-pointer" htmlFor="right">
-            <select class="form-select block w-full mt-1 bg-black bg-opacity-60" id="right" value={rightImage} onChange={event => setRightImage(event.target.value)}>
-            {Object.entries(images).map(([name, src]) => (
-                <option key={name} value={name}>{name}</option> 
+          <label
+            className="text-3xl block text-left text-white bg-black cursor-pointer"
+            htmlFor="right"
+          >
+            <select
+              class="form-select block w-full mt-1 bg-black bg-opacity-60"
+              id="right"
+              value={rightImage}
+              onChange={(event) => setRightImage(event.target.value)}
+            >
+              {Object.entries(images).map(([name, src]) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
               ))}
             </select>
           </label>
