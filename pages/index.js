@@ -4,11 +4,12 @@ import { useEffect, useRef, useState } from "react";
 
 const images = {
   "Adult Nellie": "/compare/AdultNellie.jpg",
-  Luke: "/compare/Luke.jpg",
+  "Luke": "/compare/Luke.jpg",
   "Young Nellie": "/compare/YoungNellie.webp",
   "Steve": "/compare/Steve.jpg",
   "Olivia": "/compare/Olivia.png",
-  "Shirley": "/compare/Shirley.jpg"
+  "Shirley": "/compare/Shirley.jpg",
+  "Theo": "/compare/Theo.png",
 };
 
 export default function Compare() {
